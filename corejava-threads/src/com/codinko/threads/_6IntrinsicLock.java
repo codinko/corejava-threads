@@ -1,7 +1,7 @@
 package com.codinko.threads;
 
 /**
- * Reference:
+ * References:
  * http://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html
  */
 
