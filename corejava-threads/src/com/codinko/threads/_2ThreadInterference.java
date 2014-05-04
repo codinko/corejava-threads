@@ -11,7 +11,7 @@ package com.codinko.threads;
  * 
  */
 
-public class ThreadInterference {
+public class _2ThreadInterference {
 	public static void main(String[] args) {
 
 		/**

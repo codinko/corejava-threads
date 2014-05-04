@@ -40,7 +40,7 @@ package com.codinko.threads;
  * 
  * 
  */
-public class ThreadCommunicationIntro {
+public class _1ThreadCommunicationIntro {
 
 	public static void main(String[] args) {
 		System.out.println("various " + "topics:");

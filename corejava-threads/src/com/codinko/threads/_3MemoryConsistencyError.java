@@ -5,7 +5,7 @@ package com.codinko.threads;
 * References:
 * http://docs.oracle.com/javase/tutorial/essential/concurrency/memconsist.html
 */
-public class MemoryConsistencyError {
+public class _3MemoryConsistencyError {
   /**
 	* Describes errors that result from inconsistent views of shared memory.
 	* 
