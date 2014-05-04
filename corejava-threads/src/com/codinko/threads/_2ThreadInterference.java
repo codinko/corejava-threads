@@ -12,14 +12,31 @@ package com.codinko.threads;
  */
 
 public class _2ThreadInterference {
+
+	class Counter {
+		private int c = 0;
+
+		public void increment() {
+			c++;
+		}
+
+		public void decrement() {
+			c--;
+		}
+
+		public int value() {
+			return c;
+		}
+	}
+
 	public static void main(String[] args) {
 
 		/**
-		 * Counter (below class) is designed so that each invocation of
-		 * increment will add 1 to c, and each invocation of decrement will
-		 * subtract 1 from c. However, if a Counter object is referenced from
-		 * multiple threads, interference between threads may prevent this from
-		 * happening as expected.
+		 * Counter class is designed so that each invocation of increment will
+		 * add 1 to c, and each invocation of decrement will subtract 1 from c.
+		 * However, if a Counter object is referenced from multiple threads,
+		 * interference between threads may prevent this from happening as
+		 * expected.
 		 * 
 		 * Interference happens when two operations, running in different
 		 * threads, but acting on the same data, interleave. This means that the
@@ -50,20 +67,5 @@ public class _2ThreadInterference {
 		* It can be in other way around or , no error at all, quite unpredictable.
 		*
 		*/
-		       }
-		}
-		class Counter {
-		       private int c = 0;
-		 
-		       public void increment() {
-		              c++;
-		       }
-		 
-		       public void decrement() {
-		              c--;
-		       }
-		 
-		       public int value() {
-		              return c;
 		       }
 		}
