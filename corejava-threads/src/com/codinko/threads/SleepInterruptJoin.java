@@ -1,4 +1,4 @@
-package com.codinko.example;
+package com.codinko.threads;
 
 /**
  * 
