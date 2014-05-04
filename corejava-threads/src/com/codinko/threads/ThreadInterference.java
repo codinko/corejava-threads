@@ -1,5 +1,10 @@
 package com.codinko.threads;
 
+/**
+ * 
+ * Describes how errors are introduced when multiple threads access shared data.
+ */
+
 public class ThreadInterference {
 	public static void main(String[] args) {
 		//@formatter:off
@@ -10,7 +15,7 @@ public class ThreadInterference {
 		* 2. Increment the retrieved value by 1.
 		* 3. Store the incremented value back in c.
 		*
-		*
+		* If c is shared variable,
 		* If ThreadA and ThreadB try to increment at same time, it might perhaps be like this:
 		*
 		* Thread A: Retrieve c.
