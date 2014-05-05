@@ -1,4 +1,4 @@
-package com.codinko.threads;
+package com.codinko.threads.basic;
 
 /**
  * I am a foodie!
@@ -7,10 +7,14 @@ package com.codinko.threads;
  * Another person updates the shared variable food.
  * 
  * food = true means the first person can start eating. food = false means he
- * has to wait and poll the value until food is available(food = true).
+ * has to wait and poll the value until food is available(food = true). This is
+ * not a producer-consumer problem.
+ * 
+ * Also note that notifyAll doesn't throw Interrupted Exception. It just wake up
+ * the threads.
  * 
  */
-public class _15GuardedBlockWithWait_NotifyAllError {
+public class _16GuardedBlockWithWait_NotifyAll {
 
 	static class Person {
 
@@ -55,6 +59,19 @@ public class _15GuardedBlockWithWait_NotifyAllError {
 			System.out.println("got the food.. yummyy..thanks!");
 		}
 
+		public synchronized void provideFood() {
+			this.setFood(true); // this refers to current object. In this case,
+								// the
+			// 'kuttappan' object
+			notifyAll(); // In our case, notifyAll() is associated with
+							// 'kuttappan'
+			// object
+			/**
+			 * Also note that notifyAll doesn't throw Interrupted Exception. It
+			 * just wake up the threads.
+			 */
+		}
+
 	}
 
 	public static void main(String[] args) {
@@ -85,53 +102,13 @@ public class _15GuardedBlockWithWait_NotifyAllError {
 			@Override
 			public void run() {
 				try {
-					Thread.sleep(2000); // 5 seconds
+					Thread.sleep(5000); // 5 seconds
+					kuttappan.provideFood();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				kuttappan.setFood(true);
-				/*
-				 * inform threads. Try by commenting notifyAll(); The first
-				 * thread will wait for ever!
-				 */
-				// the below way of invoking notifyAll gives you ERROR!
-				notifyAll();
 			}
 		}).start();
 
 	}
 }
-/**
- * @formatter:off OUTPUT is error: Exception in thread "Thread-0"
- *                java.lang.IllegalMonitorStateException at
- *                java.lang.Object.notifyAll(Native Method) at
- *                com.example4._15GuardedBlockWithWait$2
- *                .run(_15GuardedBlockWithWait.java:97) at
- *                java.lang.Thread.run(Thread.java:662)
- * 
- *                and the program keeps on running for ever!
- * 
- *                Reason quite obvious: notifyAll() - notify all threads
- *                associated with which object???
- */
-/**
- * 
- * notifyAll():
- * 
- * void java.lang.Object.notifyAll()
- * 
- * Wakes up all threads that are waiting on this object's monitor. A thread
- * waits on an object's monitor by calling one of the wait methods.
- * 
- * The awakened threads will not be able to proceed until the current thread
- * relinquishes the lock on this object. The awakened threads will compete in
- * the usual manner with any other threads that might be actively competing to
- * synchronize on this object; for example, the awakened threads enjoy no
- * reliable privilege or disadvantage in being the next thread to lock this
- * object.
- * 
- * This method should only be called by a thread that is the owner of this
- * object's monitor. See the notify method for a description of the ways in
- * which a thread can become the owner of a monitor.
- * 
- */

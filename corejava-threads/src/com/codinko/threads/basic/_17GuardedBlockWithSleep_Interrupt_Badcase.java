@@ -1,4 +1,4 @@
-package com.codinko.threads;
+package com.codinko.threads.basic;
 
 /**
  * WARNING: This is not good code! This is only for showing how bad something is!

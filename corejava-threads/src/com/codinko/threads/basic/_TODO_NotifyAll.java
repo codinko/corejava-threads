@@ -1,4 +1,4 @@
-package com.codinko.threads;
+package com.codinko.threads.basic;
 
 /**
  * In _15GuardedBlockWithWait_NotifyAllError.java

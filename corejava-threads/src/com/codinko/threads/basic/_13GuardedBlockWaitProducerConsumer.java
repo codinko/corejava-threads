@@ -1,4 +1,4 @@
-package com.codinko.threads;
+package com.codinko.threads.basic;
 
 /**
  * Naming of class name : Guarded Blocks. Wait helps for that. This is a

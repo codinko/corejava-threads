@@ -1,4 +1,4 @@
-package com.codinko.threads;
+package com.codinko.threads.basic;
 
 //Atomic access; volatile keyword [establishing a 'happens-before relationship']
 /**
