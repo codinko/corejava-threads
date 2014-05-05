@@ -35,7 +35,7 @@ package com.codinko.threads;
  * left to let Daasappan pass, while Daasappan moves to his right to let
  * Kuttappan pass. Seeing that they are still blocking each other, Kuttappan
  * moves to his right, while Daasappan moves to his left. They're still blocking
- * each other, buhahahaha
+ * each other!!
  * 
  * 
  * 
