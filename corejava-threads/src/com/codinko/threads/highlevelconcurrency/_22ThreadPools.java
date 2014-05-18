@@ -32,7 +32,7 @@ package com.codinko.threads.highlevelconcurrency;
  * as the system can sustain.
  * 
  */
-public class _2_2_ThreadPools {
+public class _22ThreadPools {
 
 /**
  * @formatter:off

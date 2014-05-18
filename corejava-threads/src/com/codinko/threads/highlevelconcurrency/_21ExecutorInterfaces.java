@@ -1,5 +1,34 @@
 package com.codinko.threads.highlevelconcurrency;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+/*
+ * @formatter:off
+ * public abstract interface Executor
+ * 
+ * public abstract interface ExecutorService extends Executor
+ * 
+ * public abstract class AbstractExecutorService implements ExecutorService
+ * 
+ * public class ThreadPoolExecutor extends AbstractExecutorService
+ * 
+ * Executors.execute() returns ThreadPoolExecutor of type ExecutorService
+ * 
+ * public class Executors .. 
+ * 
+ *  	public static ExecutorService newFixedThreadPool(int nThreads) {
+        	return new ThreadPoolExecutor(nThreads, nThreads,
+                                      0L, TimeUnit.MILLISECONDS,
+                                      new LinkedBlockingQueue<Runnable>());
+    	}
+ * 
+ * 
+ * public abstract interface ScheduledExecutorService extends ExecutorService
+ */
+//@formatter:on
 /**
  * References:
  * http://docs.oracle.com/javase/tutorial/essential/concurrency/exinter.html
@@ -21,7 +50,7 @@ package com.codinko.threads.highlevelconcurrency;
  * these three interface types, not with an executor class type.
  * 
  */
-public class _2_1_ExecutorInterfaces {
+public class _21ExecutorInterfaces {
 	/**
 	 * 
 	 * The Executor Interface (I)
